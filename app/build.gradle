@@ -71,6 +71,10 @@ dependencies {
     def fragment_ktx = "1.5.3"
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.2"
 }
 
 

@@ -20,44 +20,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        subscribeObservers()
-        viewModel.setStateEvent(MainStateEvent.GetReposEvents)
-
-        binding.retry.setOnClickListener {
-            viewModel.setStateEvent(MainStateEvent.GetReposEvents)
-        }
-    }
-
-    private fun subscribeObservers() {
-        viewModel.dataState.observe(this) { dataState ->
-            when (dataState) {
-                is DataState.Success<List<GitRepo>> -> {
-                    handleLoading(false) // After successful result hide progress
-                    // Update the recyclerview with latest data
-                    Log.i(TAG, dataState.data.toString())
-                }
-                is DataState.Error -> {
-                    handleLoading(false) // If any error hide progress first
-                    handleError()
-                }
-                is DataState.Loading -> {
-                    handleLoading(true) // Show progress till results are fetched
-                }
-            }
-        }
-    }
-
-    private fun handleError() {
-        binding.message.visibility = View.VISIBLE
-        binding.retry.visibility = View.GONE
-    }
-
-    private fun handleLoading(isDisplayed: Boolean) {
-        binding.progressBar.visibility = if (isDisplayed) View.VISIBLE else View.GONE
-    }
-
-    private fun handleReposData(repos: List<GitRepo>) {
-
     }
 }

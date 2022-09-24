@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/HP/AndroidStudioProjects/PractiseApp/app/src/main/res/layout/activity_main.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/PractiseApp/app/src/main/res/layout/fragment_home.xml" value="0.1625" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/PractiseApp/app/src/main/res/layout/fragment_repo_details.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/PractiseApp/app/src/main/res/layout/item_repo.xml" value="0.22" />
       </map>
     </option>
   </component>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">PractiseApp</string>
+    <string name="app_name">Git Repo Test</string>
     <string name="retry">Retry</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="repo_detail_fragment">RepoDetailsFragment</string>
+    <string name="home_fragment">HomeFragment</string>
 </resources>
