@@ -75,11 +75,13 @@ class HomeFragment : Fragment() {
 
     private fun handleError() {
         binding.message.visibility = View.VISIBLE
-        binding.retry.visibility = View.GONE
+        binding.retry.visibility = View.VISIBLE
     }
 
     private fun handleLoading(isDisplayed: Boolean) {
         binding.progressBar.visibility = if (isDisplayed) View.VISIBLE else View.GONE
+        binding.message.visibility = View.GONE
+        binding.retry.visibility = View.GONE
     }
 
     private fun handleReposData(repos: List<GitRepo>) {
