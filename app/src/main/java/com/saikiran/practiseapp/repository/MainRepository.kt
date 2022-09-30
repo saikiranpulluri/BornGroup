@@ -23,18 +23,18 @@ class MainRepository constructor(
         try {
             // App tries to refresh data if last synced time is more than 2 hours and purge old data after success
             // Else it will use cache data from db
-            if (TimeUtils.getDiffMinutes(
-                    PrefUtil.getLong(PrefUtil.SP_LAST_SYNCED_TIME),
-                    System.currentTimeMillis()
-                ) > 120
-            ) {
+//            if (TimeUtils.getDiffMinutes(
+//                    PrefUtil.getLong(PrefUtil.SP_LAST_SYNCED_TIME),
+//                    System.currentTimeMillis()
+//                ) > 120
+//            ) {
                 val gitRepos = apiService.getRepos()
                 val repos = networkMapper.mapFromEntityList(gitRepos)
                 for (repo in repos) {
                     dao.insert(cacheMapper.mapToEntity(repo))
                 }
                 PrefUtil.setLong(PrefUtil.SP_LAST_SYNCED_TIME, System.currentTimeMillis())
-            }
+           // }
             val cachedRepos = dao.getRepos()
             emit(DataState.Success(cacheMapper.mapFromEntityList(cachedRepos)))
         } catch (e: Exception) {
